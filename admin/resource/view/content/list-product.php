@@ -91,7 +91,16 @@ $serialId = 1;
                                             <td><?php echo $product['category_name'] ?></td>
                                             <td><?php echo $product['subcategory_name'] ?></td>
                                             <td><?php echo $product['product_name'] ?></td>
-                                            <td><img src="<?php echo $GLOBALS['PRODUCT_DIRECTORY'] . $product['product_master_image'] ?>" alt="No Image" width="100px" height="100px"></td>
+                                            <td><img <?php
+
+                                                        if ($product['product_master_image'] != null) {
+                                                            echo 'src = ' . $GLOBALS['PRODUCT_DIRECTORY'] . $product['product_master_image'];
+                                                        } else {
+                                                            echo 'src="public/images/no-image.png"';
+                                                        }
+
+                                                        ?> id="master_img" alt="No Image Found" width="80px" height="80px">
+                                            </td>
                                             <td><?php echo $product['product_regular_price'] ?></td>
                                             <td>
                                                 <?php if ($product['product_status'] == "Active") : ?>
