@@ -35,3 +35,19 @@ if(isset($_POST['ajax_add_product']))
     }
     else return 0;
 }
+
+if(isset($_POST['ajax_edit_product']))
+{
+    $subcategories = $cat_obj->getAllSubcategories($_POST['category_id']);
+    if(!empty($subcategories)){
+        foreach($subcategories as $subcategory)
+        {
+            echo '<option value="' . $subcategory['id'] . '"';
+
+            if($subcategory['id'] == $_POST['subcategory_id']) echo "selected";
+
+            echo '>' . $subcategory['subcategory_name'] . '</option>';
+        }
+    }
+    else return 0;
+}

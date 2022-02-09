@@ -23,8 +23,8 @@ $serialId = 1;
     <div class="row page-titles mx-0">
         <div class="col p-md-0">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="list-category.php">Manage Subcategory</a></li>
-                <li class="breadcrumb-item active"><a href="list-category.php">List Subcategory</a></li>
+                <li class="breadcrumb-item"><a href="list-product.php">Manage Product</a></li>
+                <li class="breadcrumb-item active"><a href="list-product.php">List Product</a></li>
             </ol>
         </div>
     </div>
@@ -53,7 +53,8 @@ $serialId = 1;
     <style>
         .table td,
         .table th {
-            min-width: 100px;
+            min-width: 80px;
+            text-align: center;
         }
     </style>
 
@@ -62,7 +63,7 @@ $serialId = 1;
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">List Subcategory</h4>
+                        <h4 class="card-title">List Product</h4>
                         <div class="table-responsive">
                             <table class="table table-striped table-bordered zero-configuration">
 
@@ -90,7 +91,7 @@ $serialId = 1;
                                             <td><?php echo $product['category_name'] ?></td>
                                             <td><?php echo $product['subcategory_name'] ?></td>
                                             <td><?php echo $product['product_name'] ?></td>
-                                            <td>Image</td>
+                                            <td><img src="<?php echo $GLOBALS['PRODUCT_DIRECTORY'] . $product['product_master_image'] ?>" alt="No Image" width="100px" height="100px"></td>
                                             <td><?php echo $product['product_regular_price'] ?></td>
                                             <td>
                                                 <?php if ($product['product_status'] == "Active") : ?>
@@ -121,7 +122,7 @@ $serialId = 1;
                                                 <div class="d-flex justify-content-center">
 
                                                     <form class="mr-2" action="edit-product.php" method="post">
-                                                        <input type="hidden" name="edit_id" value="<?php echo $product['id'] ?>">
+                                                        <input type="hidden" name="product_edit_id" value="<?php echo $product['id'] ?>">
                                                         <button class="btn btn-info btn-xs" type="submit">Edit</button>
                                                     </form>
 
