@@ -58,10 +58,8 @@
         <div class="nav-header">
             <div class="brand-logo">
                 <a href="dashboard.php">
-                    <b class="logo-abbr"><img src="public/images/logo.png" alt=""> </b>
-                    <span class="logo-compact"><img src="public/images/logo-compact.png" alt=""></span>
                     <span class="brand-title">
-                        <img src="public/images/logo-text.png" alt="">
+                        <img src="../public/images/logo.png" alt="company_logo">
                     </span>
                 </a>
             </div>

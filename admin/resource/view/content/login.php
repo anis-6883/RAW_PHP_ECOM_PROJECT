@@ -80,7 +80,11 @@ if (isset($_POST['try_login']))
 
                                 <?php endif; ?>
 
-                                <h4 class="text-center">Admin Login</h4>
+                                <div class="mb-3 humberger__menu__logo d-flex justify-content-center">
+                                    <a href="#"><img src="../public/images/logo.png" alt=""></a>
+                                </div>
+
+                                <h4 class="mt-5 text-center">Admin Login</h4>
 
                                 <form class="mt-5 mb-5 login-input" method="post" action="">
                                     <div class="form-group">
