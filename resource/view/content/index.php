@@ -1,11 +1,11 @@
 <?php
 
 include("app/Http/Controllers/Controller.php");
-include("app/Http/Controllers/HomeController.php");
+include("app/Http/Controllers/ProductController.php");
 
-$home_obj = new HomeController;
+$pro_obj = new ProductController;
 
-$categories = $home_obj->get_categories();
+$categories = $pro_obj->get_categories();
 
 ?>
 
@@ -21,9 +21,14 @@ $categories = $home_obj->get_categories();
                     </div>
                     <ul>
                         <?php foreach ($categories as $category) : ?>
-                            <li><a href="#"><?php echo $category['category_name'] ?></a></li>
+                            <li>
+                                <form action="./list-product.php" method="post">
+                                    <button value="<?php echo $category['id'] ?>" name="cat_id" id="cat_name">
+                                        <?php echo $category['category_name'] ?>
+                                    </button>
+                                </form>
+                            </li>
                         <?php endforeach; ?>
-
                     </ul>
                 </div>
             </div>

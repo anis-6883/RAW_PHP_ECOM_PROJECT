@@ -11,7 +11,7 @@ if (isset($_POST['try_login'])) {
 
     if($result){
 
-        $_SESSION['ECOM_login_time'] = date("Y-m-d H:i:s");
+        $_SESSION['ECOM_user_login_time'] = date("Y-m-d H:i:s");
         $_SESSION['ECOM_user_id'] = $result['id'];
         $_SESSION['ECOM_user_name'] = $result['customer_name'];
         $_SESSION['ECOM_user_email'] = $result['customer_email'];

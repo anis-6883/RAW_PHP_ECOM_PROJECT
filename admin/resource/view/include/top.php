@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Admin Dashboard</title>
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="public/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./public/images/Xfavicon.png">
     <!-- Pignose Calender -->
     <link href="public/plugins/pg-calendar/css/pignose.calendar.min.css" rel="stylesheet">
     <!-- Chartist -->

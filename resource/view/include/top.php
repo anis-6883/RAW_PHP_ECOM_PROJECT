@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="Ogani Template">
-    <meta name="keywords" content="Ogani, unica, creative, html">
+    <meta name="keywords" content="Ogani Agro Farm">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Ogani | Template</title>
-
+    <meta http-equiv="content-type" content="text/html">
+    <title>OGANI</title>
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
-
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="./public/images/ecom-favicon.png">
     <!-- Css Styles -->
     <link rel="stylesheet" href="public/css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="public/css/font-awesome.min.css" type="text/css">
@@ -21,6 +21,17 @@
     <link rel="stylesheet" href="public/css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="public/css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="public/css/style.css" type="text/css">
+    <style>
+        .header__top__right__auth{
+            display: flex;
+            width: 200px;
+        }
+        button#cat_name{
+        border: none;
+        background-color: #fff;
+        margin-bottom: 10px;
+        }
+    </style>
 </head>
 
 <body>
@@ -43,23 +54,18 @@
             <div class="header__cart__price">item: <span>$150.00</span></div>
         </div>
         <div class="humberger__menu__widget">
-            <div class="header__top__right__language">
-                <img src="public/images/language.png" alt="">
-                <div>English</div>
-                <span class="arrow_carrot-down"></span>
-                <ul>
-                    <li><a href="#">Spanis</a></li>
-                    <li><a href="#">English</a></li>
-                </ul>
-            </div>
             <div class="header__top__right__auth">
-                <a href="./sign-in.php"><i class="fa fa-user"></i> Login</a>
+                <?php if(isset($_SESSION['ECOM_user_login_time'])):?>
+                    <span><i class="fa fa-user"></i> <?php echo $_SESSION['ECOM_user_name'] ?></span>
+                    <a class="ml-4" href="?exit=yes"><i class="fa fa-sign-out"></i> Logout</a>
+                <?php else: ?>
+                    <a href="./sign-in.php"><i class="fa fa-user"></i> Login</a>
+                <?php endif; ?>
             </div>
         </div>
         <nav class="humberger__menu__nav mobile-menu">
             <ul>
-                <li class="active"><a href="./index.html">Home</a></li>
-                <li><a href="./shop-grid.html">Shop</a></li>
+                <li class="active"><a href="./index.php">Home</a></li>
                 <li><a href="#">Pages</a>
                     <ul class="header__menu__dropdown">
                         <li><a href="./shop-details.html">Shop Details</a></li>
@@ -110,7 +116,7 @@
                                 <a href="#"><i class="fa fa-pinterest-p"></i></a>
                             </div>
                             <div class="header__top__right__social">
-                                <?php if(isset($_SESSION['ECOM_login_time'])):?>
+                                <?php if(isset($_SESSION['ECOM_user_login_time'])):?>
                                     <i class="fa fa-user"></i> <?php echo $_SESSION['ECOM_user_name'] ?>
                                     <a class="ml-4" href="?exit=yes"><i class="fa fa-sign-out"></i> Logout</a>
                                 <?php else: ?>
@@ -126,14 +132,13 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="header__logo">
-                        <a href="./index.html"><img src="public/images/logo.png" alt=""></a>
+                        <a href="./index.php"><img src="public/images/logo.png" alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <nav class="header__menu">
                         <ul>
-                            <li class="active"><a href="./index.html">Home</a></li>
-                            <li><a href="./shop-grid.html">Shop</a></li>
+                            <li class="active"><a href="./index.php">Home</a></li>
                             <li><a href="#">Pages</a>
                                 <ul class="header__menu__dropdown">
                                     <li><a href="./shop-details.html">Shop Details</a></li>

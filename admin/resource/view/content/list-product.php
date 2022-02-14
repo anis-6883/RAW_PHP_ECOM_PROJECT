@@ -90,7 +90,7 @@ $serialId = 1;
                                             <td><?php echo $serialId++ ?></td>
                                             <td><?php echo $product['category_name'] ?></td>
                                             <td><?php echo $product['subcategory_name'] ?></td>
-                                            <td><?php echo $product['product_name'] ?></td>
+                                            <td><?php echo substr($product['product_name'], 0, 50) . "..." ?></td>
                                             <td><img <?php
 
                                                         if ($product['product_master_image'] != null) {
